@@ -18,3 +18,11 @@ env:
     secret: ni-future-session-secret
     availability:
       - RUNTIME
+  - variable: RESULT_TOKEN_SECRET
+    secret: ni-future-result-token-secret
+    availability:
+      - RUNTIME
+  - variable: RATE_LIMIT_SECRET
+    secret: ni-future-rate-limit-secret
+    availability:
+      - RUNTIME

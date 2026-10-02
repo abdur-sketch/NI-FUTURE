@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "ni-future-nurul-iman"
+    "default": "ni-future-nurul-iman",
+    "production": "ni-future-nurul-iman",
+    "staging": "ni-future-nurul-iman-stg"
   }
 }

@@ -9,7 +9,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "npm run build && node --test tests/*.test.mjs",
+    "test": "npm run test:unit && npm run test:integration",
+    "test:unit": "node --test tests/*.test.mjs",
+    "test:integration": "npm run build && PATH=/usr/local/opt/openjdk@21/bin:$PATH npx firebase-tools@15.32.1 emulators:exec --only firestore --project ni-future-local-test 'node --test tests/integration/*.test.mjs'",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next"
   },
   "dependencies": {
@@ -18,7 +20,8 @@
     "next": "^16.3.8",
     "qrcode": "^1.5.4",
     "react": "19.2.6",
-    "react-dom": "19.2.6"
+    "react-dom": "19.2.6",
+    "zod": "^4.6.5"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "4.2.1",

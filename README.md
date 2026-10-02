@@ -49,3 +49,9 @@ npx firebase-tools deploy --only firestore:rules,apphosting:ni-future
 Data lead, konsultasi, dan hasil minat disimpan di Cloud Firestore region Singapura. Endpoint publik melakukan validasi server-side dan pembatasan permintaan per nomor WhatsApp. Dashboard admin dilindungi oleh kredensial server-side dan cookie sesi HTTP-only. Firestore Security Rules menolak akses langsung dari browser; operasi data hanya berjalan melalui server aplikasi.
 
 Galeri karya, testimonial, nominal biaya, dan program keringanan tidak diisi dengan data rekaan. Empty state ditampilkan sampai konten resmi tersedia.
+
+Dokumentasi operasional:
+
+- [Current data contract](docs/DATA_CONTRACT.md)
+- [Backup and recovery](docs/RECOVERY.md)
+- [Environment isolation](docs/ENVIRONMENTS.md)

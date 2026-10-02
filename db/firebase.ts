@@ -1,13 +1,16 @@
 import { cert, getApp, getApps, initializeApp } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
+import { assertSafeDataTarget, firebaseProjectId } from "../lib/environment.ts";
 
 function adminApp() {
   if (getApps().length) return getApp();
+  const projectId = firebaseProjectId();
+  assertSafeDataTarget(projectId);
   const serviceAccount = process.env.FIREBASE_SERVICE_ACCOUNT_JSON;
   if (serviceAccount) {
-    return initializeApp({ credential: cert(JSON.parse(serviceAccount)) });
+    return initializeApp({ credential: cert(JSON.parse(serviceAccount)), projectId });
   }
-  return initializeApp();
+  return initializeApp(projectId ? { projectId } : undefined);
 }
 
 export function getDb() { return getFirestore(adminApp()); }

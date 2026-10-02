@@ -1,7 +1,7 @@
 {
   "apphosting": [
     {
-      "backendId": "ni-future",
+      "backendId": "ni-future-staging",
       "rootDir": ".",
       "ignore": ["node_modules", ".git", ".next", "dist", ".wrangler", "firebase-debug.log", "firebase-debug.*.log"]
     }
@@ -9,14 +9,5 @@
   "firestore": {
     "rules": "firestore.rules",
     "indexes": "firestore.indexes.json"
-  },
-  "emulators": {
-    "firestore": {
-      "port": 8088
-    },
-    "ui": {
-      "enabled": false
-    },
-    "singleProjectMode": true
   }
 }
