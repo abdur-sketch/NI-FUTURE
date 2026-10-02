@@ -1,0 +1,3 @@
+import assert from "node:assert/strict";import test from "node:test";import { computeScores } from "../lib/scoring.ts";
+test("interest scoring is deterministic",()=>{const answers=Array.from({length:10},(_,i)=>({id:`a${i}`,weights:{creative:3,video:1}}));const first=computeScores(answers),second=computeScores(answers);assert.deepEqual(first,second);assert.equal(first.top,"creative");assert.equal(first.scores.creative,100);assert.equal(first.scores.video,33)});
+test("interest scoring clamps invalid weights",()=>{const answers=[{id:"x",weights:{coding:99,business:-8}}];const result=computeScores(answers);assert.equal(result.scores.coding,10);assert.equal(result.scores.business,0)});
