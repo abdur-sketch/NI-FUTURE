@@ -13,8 +13,8 @@ Interactive SPMB Experience untuk SMK Nurul Iman.
 - Lead capture dan konsultasi
 - Informasi program 3 tahun, karya, dan biaya
 - Dashboard lead SPMB dengan WhatsApp assist
-- Persistent Cloudflare D1 storage dan Drizzle migrations
-- SIWC-protected admin surface pada deployment
+- Persistent Cloud Firestore storage
+- Dashboard admin dengan signed, HTTP-only session cookie
 
 ## Menjalankan lokal
 
@@ -32,13 +32,20 @@ Kemudian buka `http://localhost:3000`.
 ```bash
 npm run lint
 npm test
-npm run db:generate
 ```
 
 `npm test` menjalankan production build dan pengujian untuk alur inti serta mesin scoring.
 
+## Deployment Firebase
+
+Konfigurasi Firebase App Hosting, Firestore, dan runtime tersedia di `firebase.json`, `firestore.rules`, serta `apphosting.yaml`. Deploy dari root proyek dengan:
+
+```bash
+npx firebase-tools deploy --only firestore:rules,apphosting:ni-future
+```
+
 ## Data dan keamanan
 
-Data lead, konsultasi, dan hasil minat disimpan di D1. Endpoint publik melakukan validasi server-side dan pembatasan permintaan per nomor WhatsApp. Dashboard admin menggunakan identitas yang diteruskan platform Sites; deployment awal sebaiknya tetap privat sampai daftar admin dan konten resmi sekolah ditetapkan.
+Data lead, konsultasi, dan hasil minat disimpan di Cloud Firestore region Singapura. Endpoint publik melakukan validasi server-side dan pembatasan permintaan per nomor WhatsApp. Dashboard admin dilindungi oleh kredensial server-side dan cookie sesi HTTP-only. Firestore Security Rules menolak akses langsung dari browser; operasi data hanya berjalan melalui server aplikasi.
 
 Galeri karya, testimonial, nominal biaya, dan program keringanan tidak diisi dengan data rekaan. Empty state ditampilkan sampai konten resmi tersedia.

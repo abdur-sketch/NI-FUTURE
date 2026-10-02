@@ -1,0 +1,20 @@
+runConfig:
+  minInstances: 0
+  maxInstances: 4
+  concurrency: 80
+  cpu: 1
+  memoryMiB: 512
+
+env:
+  - variable: ADMIN_EMAIL
+    value: "baikganteng88@gmail.com"
+    availability:
+      - RUNTIME
+  - variable: ADMIN_PASSWORD
+    secret: ni-future-admin-password
+    availability:
+      - RUNTIME
+  - variable: ADMIN_SESSION_SECRET
+    secret: ni-future-session-secret
+    availability:
+      - RUNTIME

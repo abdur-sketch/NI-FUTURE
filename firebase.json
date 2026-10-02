@@ -1,0 +1,12 @@
+{
+  "apphosting": [
+    {
+      "backendId": "ni-future",
+      "rootDir": ".",
+      "ignore": ["node_modules", ".git", ".next", "dist", ".wrangler", "firebase-debug.log", "firebase-debug.*.log"]
+    }
+  ],
+  "firestore": {
+    "rules": "firestore.rules"
+  }
+}

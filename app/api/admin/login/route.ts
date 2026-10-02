@@ -1,0 +1,2 @@
+import { NextResponse } from "next/server";import { clean } from "@/db/firebase";import { createAdminSession,credentialsMatch } from "@/lib/admin-auth";
+export async function POST(request:Request){try{const body=await request.json(),email=clean(body.email,180),password=clean(body.password,200);if(!credentialsMatch(email,password))return NextResponse.json({error:"Email atau kata sandi tidak sesuai."},{status:401});await createAdminSession(email);return NextResponse.json({ok:true})}catch{return NextResponse.json({error:"Belum dapat masuk."},{status:500})}}
