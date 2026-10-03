@@ -6,7 +6,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { Icon } from "../icons/Icon";
 
 const items = [
-  ["Beranda", "/"], ["Program", "/#program"], ["Pemetaan Minat", "/minat"], ["Karya", "/karya"], ["Biaya", "/biaya"], ["Konsultasi", "/konsultasi"],
+  ["Beranda", "/"], ["Tentang", "/#tentang"], ["Eksplorasi Minat", "/#eksplorasi"], ["Program", "/#program"], ["Portofolio", "/#portofolio"], ["FAQ", "/#faq"],
 ] as const;
 
 export function SiteHeader({ onInterested }: { onInterested?: () => void }) {
@@ -21,6 +21,6 @@ export function SiteHeader({ onInterested }: { onInterested?: () => void }) {
   return <header className="site-header"><div className="shell nav-wrap">
     <Link href="/" className="brand" aria-label="NI FUTURE — Beranda"><span className="brand-mark">NI</span><span><b>NI FUTURE</b><small>SMK NURUL IMAN</small></span></Link>
     <button ref={triggerRef} className="menu-button" type="button" aria-label={open ? "Tutup menu" : "Buka menu"} aria-expanded={open} aria-controls={menuId} onClick={() => setOpen(value => !value)}><Icon name={open ? "close" : "menu"}/></button>
-    <nav id={menuId} className={open ? "open" : ""} aria-label="Navigasi utama">{items.map(([label, href]) => <Link href={href} key={label} onClick={() => close()} aria-current={href === pathname ? "page" : undefined}>{label}</Link>)}{onInterested ? <button type="button" className="nav-cta" onClick={() => { close(); onInterested(); }}>Mulai Sekarang</button> : <Link className="nav-cta" href="/mulai" onClick={() => close()}>Mulai Sekarang</Link>}</nav>
+    <nav id={menuId} className={open ? "open" : ""} aria-label="Navigasi utama">{items.map(([label, href]) => <Link href={href} key={label} onClick={() => close()} aria-current={href === "/" && pathname === "/" ? "page" : undefined}>{label}</Link>)}{onInterested ? <button type="button" className="nav-cta" onClick={() => { close(); onInterested(); }}>Mulai Asesmen</button> : <Link className="nav-cta" href="/minat" onClick={() => close()}>Mulai Asesmen</Link>}</nav>
   </div></header>;
 }
