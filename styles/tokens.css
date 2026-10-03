@@ -1,0 +1,94 @@
+:root {
+  color-scheme: light;
+
+  --ni-green-50: #f1faf5;
+  --ni-green-100: #dcf4e6;
+  --ni-green-200: #b9e8cd;
+  --ni-green-300: #86d5aa;
+  --ni-green-400: #4fba82;
+  --ni-green-500: #2d925e;
+  --ni-green-600: #1f7a4d;
+  --ni-green-700: #17603a;
+  --ni-green-800: #11492f;
+  --ni-green-900: #0d3b28;
+
+  --ni-forest-700: #123f2d;
+  --ni-forest-800: #0d3526;
+  --ni-forest-900: #08291d;
+
+  --ni-neutral-0: #ffffff;
+  --ni-neutral-50: #f8faf8;
+  --ni-neutral-100: #eff3f0;
+  --ni-neutral-200: #dce3de;
+  --ni-neutral-300: #c3cec6;
+  --ni-neutral-500: #66756c;
+  --ni-neutral-700: #39483f;
+  --ni-neutral-900: #17211c;
+
+  --background: var(--ni-neutral-0);
+  --surface: var(--ni-neutral-0);
+  --surface-subtle: var(--ni-neutral-50);
+  --foreground: var(--ni-neutral-900);
+  --foreground-muted: #526159;
+  --foreground-soft: #6a786f;
+  --primary: var(--ni-green-700);
+  --primary-hover: var(--ni-green-800);
+  --primary-active: var(--ni-green-900);
+  --primary-foreground: var(--ni-neutral-0);
+  --border: var(--ni-neutral-200);
+  --border-strong: var(--ni-neutral-300);
+  --success: #17603a;
+  --warning: #7a4a00;
+  --danger: #a12622;
+  --info: #155d80;
+  --focus-ring: #2563eb;
+
+  --font-display: var(--font-sans), Arial, sans-serif;
+  --font-body: var(--font-sans), Arial, sans-serif;
+  --font-label: var(--font-mono), monospace;
+  --text-display: clamp(2.75rem, 6vw, 5.75rem);
+  --text-h1: clamp(2.35rem, 5vw, 4.75rem);
+  --text-h2: clamp(2rem, 3.8vw, 3.75rem);
+  --text-h3: clamp(1.25rem, 2vw, 1.75rem);
+  --text-body-lg: clamp(1.0625rem, 1.3vw, 1.1875rem);
+  --text-body: 1rem;
+  --text-body-sm: 0.875rem;
+  --text-label: 0.75rem;
+  --text-caption: 0.75rem;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-30: 7.5rem;
+
+  --container-max: 78rem;
+  --container-gutter: clamp(1rem, 4vw, 2.5rem);
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-pill: 999px;
+  --shadow-xs: 0 1px 2px rgb(8 41 29 / 0.04);
+  --shadow-sm: 0 4px 12px rgb(8 41 29 / 0.06);
+  --shadow-md: 0 12px 32px rgb(8 41 29 / 0.08);
+  --shadow-lg: 0 24px 64px rgb(8 41 29 / 0.12);
+  --duration-fast: 150ms;
+  --duration-normal: 220ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+
+  /* Compatibility aliases for the existing Phase 0.5 pages. */
+  --paper: var(--background);
+  --ink: var(--foreground);
+  --muted: var(--foreground-muted);
+  --line: rgb(23 33 28 / 0.14);
+  --green: var(--ni-green-700);
+}

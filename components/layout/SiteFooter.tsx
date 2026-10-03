@@ -1,0 +1,5 @@
+import Link from "next/link";
+
+export function SiteFooter() {
+  return <footer className="site-footer"><div className="shell footer-grid"><div><div className="brand footer-brand"><span className="brand-mark">NI</span><span><b>NI FUTURE</b><small>FUTURE STARTS HERE.</small></span></div><p className="site-footer__description">Platform masa depan siswa dari Pondok Pesantren Nurul Iman untuk mengenali potensi, membangun skill nyata, dan menyiapkan langkah berikutnya.</p></div><div className="site-footer__column"><strong>Jelajahi</strong><Link href="/">Beranda</Link><Link href="/#program">Program</Link><Link href="/minat">Pemetaan Minat</Link><Link href="/karya">Karya</Link></div><div className="site-footer__column"><strong>Informasi</strong><Link href="/biaya">Biaya</Link><Link href="/konsultasi">Konsultasi</Link><Link href="/#program">Tentang</Link></div><div className="site-footer__column"><strong>Pondok Pesantren Nurul Iman</strong><span>Adab terjaga.</span><span>Skill bertumbuh.</span><span>Masa depan dipersiapkan.</span></div></div><div className="shell copyright"><span>© 2026 SMK Nurul Iman</span><span>NI FUTURE · Future Starts Here.</span></div></footer>;
+}

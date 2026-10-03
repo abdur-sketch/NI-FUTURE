@@ -1,0 +1,82 @@
+html {
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--ni-green-200);
+  color: var(--ni-forest-900);
+}
+
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+:where(button, input, select, textarea):disabled {
+  cursor: not-allowed;
+}
+
+.ni-container {
+  width: min(var(--container-max), calc(100% - (2 * var(--container-gutter))));
+  margin-inline: auto;
+}
+
+.ni-display,
+.ni-h1,
+.ni-h2,
+.ni-h3 {
+  color: inherit;
+  font-family: var(--font-display);
+  text-wrap: balance;
+}
+
+.ni-display { font-size: var(--text-display); font-weight: 720; letter-spacing: -0.065em; line-height: 0.96; }
+.ni-h1 { font-size: var(--text-h1); font-weight: 700; letter-spacing: -0.055em; line-height: 1; }
+.ni-h2 { font-size: var(--text-h2); font-weight: 680; letter-spacing: -0.045em; line-height: 1.05; }
+.ni-h3 { font-size: var(--text-h3); font-weight: 680; letter-spacing: -0.025em; line-height: 1.2; }
+.ni-body-lg { font-size: var(--text-body-lg); line-height: 1.65; }
+.ni-body { font-size: var(--text-body); line-height: 1.65; }
+.ni-body-sm { font-size: var(--text-body-sm); line-height: 1.55; }
+.ni-label { font: 700 var(--text-label)/1.3 var(--font-label); letter-spacing: 0.08em; text-transform: uppercase; }
+.ni-caption { font-size: var(--text-caption); line-height: 1.45; }
+.ni-muted { color: var(--foreground-muted); }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 600px) {
+  :root {
+    --container-gutter: 1rem;
+    --text-display: clamp(2.55rem, 13vw, 3.6rem);
+    --text-h1: clamp(2.25rem, 11vw, 3.25rem);
+    --text-h2: clamp(1.9rem, 9vw, 2.75rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

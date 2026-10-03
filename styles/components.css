@@ -1,0 +1,79 @@
+.ni-button {
+  min-height: 2.75rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding-inline: var(--space-5);
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  transition: background-color var(--duration-fast) var(--ease-standard), border-color var(--duration-fast) var(--ease-standard), color var(--duration-fast) var(--ease-standard), transform var(--duration-fast) var(--ease-standard), box-shadow var(--duration-fast) var(--ease-standard);
+}
+.ni-button:hover:not(:disabled) { transform: translateY(-1px); }
+.ni-button:active:not(:disabled) { transform: translateY(0); }
+.ni-button:disabled, .ni-button[aria-disabled="true"] { opacity: 0.5; pointer-events: none; }
+.ni-button--sm { min-height: 2.75rem; padding-inline: var(--space-4); font-size: var(--text-body-sm); }
+.ni-button--md { min-height: 3rem; }
+.ni-button--lg { min-height: 3.5rem; padding-inline: var(--space-6); font-size: 1.0625rem; }
+.ni-button--primary { background: var(--primary); color: var(--primary-foreground); box-shadow: var(--shadow-xs); }
+.ni-button--primary:hover:not(:disabled) { background: var(--primary-hover); box-shadow: var(--shadow-sm); }
+.ni-button--primary:active:not(:disabled) { background: var(--primary-active); }
+.ni-button--secondary { background: var(--surface); border-color: var(--border-strong); color: var(--foreground); }
+.ni-button--secondary:hover:not(:disabled) { background: var(--surface-subtle); border-color: var(--ni-green-700); color: var(--ni-green-800); }
+.ni-button--ghost { background: transparent; color: var(--foreground); }
+.ni-button--ghost:hover:not(:disabled) { background: var(--ni-green-50); color: var(--ni-green-800); }
+.ni-button--danger { background: var(--danger); color: white; }
+.ni-button--danger:hover:not(:disabled) { background: #811d1a; }
+.ni-button__spinner { width: 1rem; height: 1rem; border: 2px solid currentColor; border-right-color: transparent; border-radius: 50%; animation: ni-spin 0.8s linear infinite; }
+@keyframes ni-spin { to { transform: rotate(360deg); } }
+
+.ni-field { display: grid; gap: var(--space-2); }
+.ni-field__label { color: var(--foreground); font-size: var(--text-body-sm); font-weight: 680; }
+.ni-field__required { color: var(--danger); }
+.ni-field__hint, .ni-field__error { font-size: var(--text-caption); line-height: 1.45; }
+.ni-field__hint { color: var(--foreground-muted); }
+.ni-field__error { color: var(--danger); font-weight: 650; }
+.ni-input, .ni-textarea, .ni-select {
+  width: 100%;
+  min-height: 3rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--foreground);
+  padding: 0.75rem 0.875rem;
+  transition: border-color var(--duration-fast), box-shadow var(--duration-fast), background-color var(--duration-fast);
+}
+.ni-textarea { min-height: 7.5rem; resize: vertical; }
+.ni-input:hover:not(:disabled), .ni-textarea:hover:not(:disabled), .ni-select:hover:not(:disabled) { border-color: var(--ni-neutral-500); }
+.ni-input:focus-visible, .ni-textarea:focus-visible, .ni-select:focus-visible { border-color: var(--focus-ring); box-shadow: 0 0 0 3px rgb(37 99 235 / 0.18); outline: 0; }
+.ni-input[aria-invalid="true"], .ni-textarea[aria-invalid="true"], .ni-select[aria-invalid="true"] { border-color: var(--danger); }
+.ni-input:disabled, .ni-textarea:disabled, .ni-select:disabled { background: var(--ni-neutral-100); color: var(--foreground-soft); }
+.ni-check { min-height: 2.75rem; display: inline-flex; align-items: center; gap: var(--space-3); font-size: var(--text-body-sm); }
+.ni-check input { width: 1.125rem; height: 1.125rem; accent-color: var(--primary); }
+
+.ni-card { border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--surface); padding: var(--space-6); box-shadow: var(--shadow-xs); }
+.ni-card--feature { border-color: var(--ni-green-200); background: linear-gradient(145deg, var(--ni-green-50), var(--surface)); }
+.ni-card--program { border-top: 4px solid var(--primary); }
+.ni-card--metric { padding: var(--space-5); box-shadow: none; }
+.ni-card--result { background: var(--ni-forest-900); border-color: var(--ni-forest-700); color: white; box-shadow: var(--shadow-md); }
+.ni-card--portfolio { overflow: hidden; padding: 0; }
+.ni-card--admin { border-radius: var(--radius-md); box-shadow: none; }
+
+.ni-badge { width: fit-content; min-height: 1.75rem; border-radius: var(--radius-pill); display: inline-flex; align-items: center; padding: 0.25rem 0.625rem; font-size: var(--text-caption); font-weight: 700; line-height: 1; }
+.ni-badge--neutral { background: var(--ni-neutral-100); color: var(--ni-neutral-700); }
+.ni-badge--primary { background: var(--ni-green-100); color: var(--ni-green-800); }
+.ni-badge--success { background: #e0f4e8; color: #14532d; }
+.ni-badge--warning { background: #fff3d6; color: var(--warning); }
+.ni-badge--danger { background: #fde8e7; color: var(--danger); }
+.ni-badge--info { background: #e1f2f9; color: var(--info); }
+
+.ni-dialog-backdrop { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; overflow-y: auto; padding: var(--space-4); background: rgb(8 41 29 / 0.76); backdrop-filter: blur(4px); }
+.ni-dialog { width: min(100%, 38rem); max-height: min(90vh, 50rem); overflow-y: auto; border-radius: var(--radius-xl); background: var(--surface); padding: clamp(1.25rem, 4vw, 2.25rem); box-shadow: var(--shadow-lg); }
+.ni-dialog__header { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--space-5); margin-bottom: var(--space-5); }
+.ni-dialog__title { margin: 0; font-size: var(--text-h3); letter-spacing: -0.03em; }
+.ni-dialog__description { margin: var(--space-2) 0 0; color: var(--foreground-muted); }
+.ni-dialog__close { flex: 0 0 auto; width: 2.75rem; height: 2.75rem; border: 0; border-radius: var(--radius-pill); background: var(--surface-subtle); color: var(--foreground); display: grid; place-items: center; }
+.ni-dialog__close:hover { background: var(--ni-neutral-100); }
